@@ -4,17 +4,6 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
-
-    $('#testimonial-carousel').function()({
-            center: true,
-            items: 1,
-            loop: true,
-            margin: 0,
-            autoplay: true,
-            smartSpeed: 1000,
-    });
-
 (function($) {
   "use strict";
 
