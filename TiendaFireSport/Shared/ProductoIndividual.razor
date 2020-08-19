@@ -1,0 +1,31 @@
+﻿<div class="item @Producto.Categoria col-sm-6 col-md-4 col-lg-4 mb-4">
+    <a href="Worksingle" class="item-wrap fancybox">
+        <div class="work-info">
+            <h3>@Producto.Nombre</h3>
+            <h3>@Producto.Color</h3>
+            <span>@Producto.Categoria</span>
+            <h3>$@Producto.Precio</h3>
+        </div>
+        <img class="img-fluid" src="assets/img/@Producto.Imagen">
+    </a>
+    <!-- Default unchecked -->
+    <div class="custom-control custom-checkbox">
+        <h6>
+            Talla
+            <input name="ChkTalla" type="checkbox" value="1" />XS&nbsp;&nbsp;
+            <input name="ChkTalla" type="checkbox" value="2" />S&nbsp;&nbsp;
+            <input name="ChkTalla" type="checkbox" value="3" />M&nbsp;&nbsp;
+            <input name="ChkTalla" type="checkbox" value="4" />L&nbsp;&nbsp;
+            <input name="ChkTalla" type="checkbox" value="5" />XL&nbsp;&nbsp;
+        </h6>
+    </div>
+    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprarse</a>
+    <button type="button" class="btn btn-primary btn-lg btn-block" @onclick="@(()=>ComprarProducto.InvokeAsync(Producto))">Comprar</button>
+</div>
+
+@code {
+    [Parameter] public Producto Producto { get; set; }
+    [Parameter] public EventCallback<Producto> ComprarProducto { get; set; }
+
+     
+}

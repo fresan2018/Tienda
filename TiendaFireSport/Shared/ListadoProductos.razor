@@ -1,0 +1,34 @@
+﻿<main id="main">
+    <section class="section site-portfolio">
+        <div class="container">
+            <div class="row mb-5 align-items-center">
+                <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+                    <h2>Chaqueta protectora </h2>
+                    <p class="mb-0">Anti fluido con tapabocas &amp; 100% Poliester</p>
+                </div>
+                <div class="col-md-12 col-lg-6 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
+                    <div id="filters" class="filters">
+                        <a href="#" data-filter="*" class="active">Todo</a>
+                        <a href="#" data-filter=".nuevo">Lo nuevo</a>
+                        <a href="#" data-filter=".Premium">Premium</a>
+                        <a href="#" data-filter=".Ofertas">Ofertas</a>
+                        <a href="#" data-filter=".Diseños">Diseños</a>
+                    </div>
+                </div>
+            </div>
+            <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+                <ListadoGenerico Listado="Productos">
+                    <HayRegistros Context="producto">
+                        <ProductoIndividual Producto="producto" ComprarProducto="ComprarProducto" />
+                    </HayRegistros>
+                </ListadoGenerico>
+            </div>
+        </div>
+    </section>
+</main>
+
+@code{
+    [Parameter] public List<Producto> Productos { get; set; }
+    [Parameter] public EventCallback<Producto> ComprarProducto { get; set; }
+
+}

@@ -1,0 +1,20 @@
+﻿@page "/servicio"
+@inject IRepositorio repositorio 
+
+    <main id="main">
+        <ListadoProductos Productos="Productos" ComprarProducto="ComprarProducto" />
+        <Servicios />
+        <Testimonial />
+    </main><!-- End #main -->
+@code{ 
+    private List<Producto> Productos;
+    protected override void OnInitialized()
+    {
+        Productos = repositorio.ObtenerProductos();
+    }
+
+    protected void ComprarProducto(Producto producto)
+    {
+        Productos.Add(new Producto() { Id = 7, Nombre = "Dep 158", Categoria = "nuevo", Imagen = "img_7.jpg", Preciold = 70000, Precio = 49900, Color = "Fucsia y negro" });
+    }
+}

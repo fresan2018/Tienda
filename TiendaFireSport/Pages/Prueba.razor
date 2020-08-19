@@ -1,0 +1,19 @@
+﻿@page "/prueba"
+<h3>Prueba</h3>
+<p>Current count: @currentCount</p>
+<button type="button" @onclick="ComprarProductoP">Comprar2</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="IncrementCount" data-toggle="modal">Close</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    void ComprarProductoP()
+    {
+        Console.WriteLine("Borra");
+    }
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount += 2;
+    }
+}
